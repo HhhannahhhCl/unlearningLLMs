@@ -22,16 +22,11 @@ from utils import (
     plot_metrics,
     plot_training_stats
 )
-#from utils.evaluation import (
-#    QualitativeEvaluation,
-#    QuantitativeEvaluation,
-#    MMLU
-#)
+
 from sequential import NPOPlusDescentDataCollator, SequentialUnlearning
 
 warnings.filterwarnings('ignore')
 
-# home directory: /fp/homes01/u01/ec-hannacla
 
 def set_seed(seed_value=9550):
     #os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
