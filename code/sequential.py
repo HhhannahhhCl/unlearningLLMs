@@ -109,35 +109,12 @@ class NPOPlusDescentDataCollator(DataCollatorForSeq2Seq):
 
 class NPOPlusDescentTrainer(Trainer):
     def __init__(self, *args, npo_beta, renyi_alpha, npo_mult, rt_mult, renyi_mult, **kwargs):
-        """
-        npo_args should include:
-            - beta
-            - npo_mult
-            - rt_mult
-            - kl_mult
-        """
         super().__init__(*args, **kwargs)
         self.npo_beta = npo_beta
         self.renyi_alpha = renyi_alpha
         self.npo_mult = npo_mult
         self.rt_mult = rt_mult
         self.renyi_mult = renyi_mult
-        #self.npo_args = npo_args or {
-        #    "beta": 1.0,
-        #    "npo_mult": 1.0,
-        #    "rt_mult": 1.0,
-        #    "kl_mult": 0.0,
-        #}
-
-    """ Not needed because of shift_labels == -100 input as defined in AdvSupervisedDataset
-    def make_answer_mask(self, attention_mask, ranges):
-        answer_mask = attention_mask.clone()
-        answer_mask[
-            torch.arange(attention_mask.shape[1]).unsqueeze(0).to(attention_mask.device)
-            < ranges[:, 0].unsqueeze(1)
-        ] = 0
-        return answer_mask
-    """
 
     def compute_loss(self, model, inputs, return_outputs=False, num_items_in_batch=None):
         input_ids = inputs["input_ids"]
