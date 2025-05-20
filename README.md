@@ -1,4 +1,4 @@
-# Parameter-Efficient Unlearning for Large Language Models – An Exploration of New Approaches Leveraging NPO, Rényi Divergence, and Sequential Data Sampling
+# Parameter-Efficient Unlearning for Large Language Models – Leveraging NPO, Rényi Divergence, and Sequential Data Sampling
 
 This GitHub repository contains the code to the respective submitted paper implementing an unlearning algorithm combining previous work by Premptis et al. (2025) and Bronec and Helcl (2025). The system uses sequential data sampling during training as well as implements a loss function based on NPO, cross entropy and the Rényi divergence. While this is an anonymized repository, the identifiable repository has been made available to the examinors. 
 
