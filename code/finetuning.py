@@ -45,10 +45,13 @@ parser = argparse.ArgumentParser()
 parser.add_argument(
     "--model_size", default="1B", type=str, choices=["1B", "7B"], help="Model to use."
 )
-parser.add_argument("--data", default="/fp/projects01/ec403/IN5550/exam/unlearning/",type=str, help="Path to training data.")
+parser.add_argument(
+    "--model_path", type=str, help="Model to use."
+)
+parser.add_argument("--data", type=str, help="Path to training data.")
 parser.add_argument("--split", default="train", type=str, help="Training or validation data.")
-parser.add_argument("--logdir", default="/cluster/work/projects/ec403/ec-hannacla", type=str, help="Logdir.")
-parser.add_argument("--output_dir", default="/cluster/work/projects/ec403/ec-hannacla", type=str, help="Output directory.")
+parser.add_argument("--logdir", type=str, help="Logdir.")
+parser.add_argument("--output_dir", type=str, help="Output directory.")
 
 # Training arguments
 parser.add_argument("--seed", default=9550, type=int, help="Random seed.")
@@ -110,7 +113,7 @@ with open(f"{args.output_dir}/training_args.json", "w") as f:
 
 print(f"Training with the following arguments:\n\n{json.dumps(args_dict, indent=4)}")
 
-model_path = f"/fp/projects01/ec403/IN5550/exam/unlearning/semeval25-unlearning-{args.model_size}-model"
+model_path = args.model_path
 
 # Loading model and tokenizer
 model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16)
