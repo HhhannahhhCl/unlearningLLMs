@@ -20,10 +20,10 @@ module load nlpl-accelerate/0.34.2-foss-2022b-Python-3.10.8
 module load nlpl-nlptools/04-foss-2022b-Python-3.10.8
 module load nlpl-trl/0.15.2-foss-2022b-Python-3.10.8
 
-DATA=${1} # Path to data, e.g., /fp/projects01/ec403/IN5550/exam/unlearning/validation/
-MODEL=${2} # The model you want to evaluate, e.g., /fp/projects01/ec403/IN5550/exam/unlearning/semeval25-unlearning-1B-model
-MIA=${3} # Path to MIA data, e.g., /fp/projects01/ec403/IN5550/exam/unlearning/mia_data/
-MMLU=${4} # Path to the MMLU metrics json file, e.g., /fp/projects01/ec403/IN5550/exam/unlearning/mmlu_results_1B.jsonl
+DATA=${1} # Path to data
+MODEL=${2} # The model you want to evaluate
+MIA=${3} # Path to MIA data
+MMLU=${4} # Path to the MMLU metrics json file
 TOKENS=${5} # Max length of the generated sequences, e.g., 256
 BATCH=${6} # Batch size, e.g., 64
 OUTPUT=${7} # model name as output directory
