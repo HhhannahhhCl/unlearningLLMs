@@ -19,7 +19,7 @@ module load nlpl-datasets/3.2.0-foss-2022b-Python-3.10.8
 module load nlpl-accelerate/0.34.2-foss-2022b-Python-3.10.8
 module load nlpl-llmtools/06-foss-2022b-Python-3.10.8
 
-MODEL=${1}  # Path to the model, e.g. /fp/projects01/ec403/IN5550/exam/unlearning/semeval25-unlearning-1B-model/
+MODEL=${1}  # Path to the model
 OUT=${2}  # Directory to save the results to.
 BATCH=${3}  # Batch size (e.g., 64)
 
