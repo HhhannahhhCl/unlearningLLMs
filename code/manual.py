@@ -65,14 +65,17 @@ parser = argparse.ArgumentParser()
 parser.add_argument(
     "--model_path", type=str, help="Model to use."
 )
+parser.add_argument(
+    "--retain_data", type=str, help="Path to retain data."
+)
+parser.add_argument(
+    "--forget_data", type=str, help="Path to forget data."
+)
 
 args = parser.parse_args()
 
-retain_tr = pd.read_json(f'/fp/projects01/ec403/IN5550/exam/unlearning/train/retain.jsonl', lines=True)
-forget_tr = pd.read_json(f'/fp/projects01/ec403/IN5550/exam/unlearning/train/forget.jsonl', lines=True)
-
-retain_val = pd.read_json(f'/fp/projects01/ec403/IN5550/exam/unlearning/validation/retain.jsonl', lines=True)
-forget_val = pd.read_json(f'/fp/projects01/ec403/IN5550/exam/unlearning/validation/forget.jsonl', lines=True)
+retain_val = pd.read_json(args.retain_data, lines=True)
+forget_val = pd.read_json(args.forget_data, lines=True)
 
 model = AutoModelForCausalLM.from_pretrained(args.model_path, torch_dtype=torch.bfloat16, trust_remote_code = True) # .to('cuda')
 
