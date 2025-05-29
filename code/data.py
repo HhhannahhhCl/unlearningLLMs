@@ -13,7 +13,7 @@ class DatasetProcessor:
             num_samples (int, optional): Number of samples to select from each task/dataset. Defaults to None (no sampling).
             start_idx (int, optional): Starting index for sampling. Defaults to 0.
         """
-        self.data_path = data_dir # /fp/projects01/ec403/IN5550/exam/unlearning
+        self.data_path = data_dir 
         self.tokenizer = tokenizer
         self.num_samples = n_samples_per_task
         self.start_idx = start_idx
