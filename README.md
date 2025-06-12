@@ -13,6 +13,7 @@ Jan Bronec and Jindřich Helcl. 2025. [Atyaephyra at SemEval-2025 Task 4: Low-Ra
 Iraklis Premptis, Maria Lymperaiou, Giorgos Filandrianos, Orfeas Menis Mastromichalakis, Athanasios Voulodimos, and Giorgos Stamou. 2025. [AILS-NTUA at SemEval-2025 Task 4: Parameter-Efficient Unlearning for Large Language Models using Data Chunking](https://arxiv.org/abs/2503.02443). Preprint, arXiv:2503.02443.
 
 ### Citation
+```
 @inproceedings{clausen-2025-unlearning,
 	title = "Parameter-Efficient Unlearning for Large Language Models – Leveraging NPO, Rényi Divergence, and Sequential Data Sampling",
 	author = "Hannah Clausen",
@@ -23,3 +24,4 @@ Iraklis Premptis, Maria Lymperaiou, Giorgos Filandrianos, Orfeas Menis Mastromic
 	publisher = "University of Oslo, Norway",
 	pages = "88--98"
 }
+```
